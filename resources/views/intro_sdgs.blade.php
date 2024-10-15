@@ -83,7 +83,7 @@
         <p>無貧窮</p>
       </div>
       <div class="goal" onclick="showGoalInfo(2)">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/SDG_Logo_2.svg/120px-SDG_Logo_2.svg.png" alt="Goal 2">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/SDG_Logo_2.svg/120px-SDG_Logo_23.svg.png" alt="Goal 2">
         <p>零飢餓</p>
       </div>
       <div class="goal" onclick="showGoalInfo(3)">
