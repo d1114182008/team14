@@ -90,6 +90,10 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/SDG_Logo_3.svg/120px-SDG_Logo_3.svg.png" alt="Goal 3">
         <p>良好健康與福祉</p>
       </div>
+      <div class="goal" onclick="showGoalInfo(4)">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/SDG_Logo_3.svg/120px-SDG_Logo_3.svg.png" alt="Goal 4">
+        <p>優質教育</p>
+      </div>
       <!-- 可以添加更多目標 -->
     </div>
   </section>
@@ -109,6 +113,7 @@
       1: "無貧窮：消除世界各地的貧困，確保每個人都能過上有尊嚴的生活。",
       2: "零飢餓：消除飢餓，確保全球人們能享有足夠、營養和可持續的食物。",
       3: "良好健康與福祉：確保所有人享有健康的生活和促進福祉。",
+      4: "暫定",
       // 可以添加更多的目標描述
     };
 
