@@ -42,7 +42,7 @@
       text-align: center;
       margin: 15px;
       cursor: pointer;
-      width: 30%;
+      width: 15%;
       margin-bottom: 20px;
     }
 
@@ -110,71 +110,71 @@
     <div class="goal-container">
       <!-- 目標列表 -->
       <div class="goal" onclick="showGoalInfo(1)">
-        <img src="" alt="Goal 1">
+        <img src="images/sdgs01.png" alt="Goal 1">
         <p>無貧窮</p>
       </div>
       <div class="goal" onclick="showGoalInfo(2)">
-        <img src="" alt="Goal 2">
+        <img src="images/sdgs02.png" alt="Goal 2">
         <p>零飢餓</p>
       </div>
       <div class="goal" onclick="showGoalInfo(3)">
-        <img src="" alt="Goal 3">
+        <img src="images/sdgs03.png" alt="Goal 3">
         <p>良好健康與福祉</p>
       </div>
       <div class="goal" onclick="showGoalInfo(4)">
-        <img src="" alt="Goal 4">
+        <img src="images/sdgs04.png" alt="Goal 4">
         <p>優質教育</p>
       </div>
       <div class="goal" onclick="showGoalInfo(5)">
-        <img src="" alt="Goal 5">
+        <img src="images/sdgs05.png" alt="Goal 5">
         <p>性別平權</p>
       </div>
       <div class="goal" onclick="showGoalInfo(6)">
-        <img src="" alt="Goal 6">
+        <img src="images/sdgs06.png" alt="Goal 6">
         <p>淨水及衛生</p>
       </div>
       <div class="goal" onclick="showGoalInfo(7)">
-        <img src="" alt="Goal 7">
+        <img src="images/sdgs07.png" alt="Goal 7">
         <p>可負擔的潔淨能源</p>
       </div>
       <div class="goal" onclick="showGoalInfo(8)">
-        <img src="" alt="Goal 8">
+        <img src="images/sdgs08.png" alt="Goal 8">
         <p>合適的工作及經濟成長</p>
       </div>
       <div class="goal" onclick="showGoalInfo(9)">
-        <img src="" alt="Goal 9">
+        <img src="images/sdgs09.png" alt="Goal 9">
         <p>工業化、創新及基礎建設</p>
       </div>
       <div class="goal" onclick="showGoalInfo(10)">
-        <img src="" alt="Goal 10">
+        <img src="images/sdgs10.png" alt="Goal 10">
         <p>減少不平等</p>
       </div>
       <div class="goal" onclick="showGoalInfo(11)">
-        <img src="" alt="Goal 11">
+        <img src="images/sdgs11.png" alt="Goal 11">
         <p>永續城鄉</p>
       </div>
       <div class="goal" onclick="showGoalInfo(12)">
-        <img src="" alt="Goal 12">
+        <img src="images/sdgs12.png" alt="Goal 12">
         <p>責任消費及生產</p>
       </div>
       <div class="goal" onclick="showGoalInfo(13)">
-        <img src="" alt="Goal 13">
+        <img src="images/sdgs13.png" alt="Goal 13">
         <p>氣候行動</p>
       </div>
       <div class="goal" onclick="showGoalInfo(14)">
-        <img src="" alt="Goal 14">
+        <img src="images/sdgs14.png" alt="Goal 14">
         <p>保育海洋生態</p>
       </div>
       <div class="goal" onclick="showGoalInfo(15)">
-        <img src="" alt="Goal 15">
+        <img src="images/sdgs15.png" alt="Goal 15">
         <p>保育陸域生態</p>
       </div>
       <div class="goal" onclick="showGoalInfo(16)">
-        <img src="" alt="Goal 16">
+        <img src="images/sdgs16.png" alt="Goal 16">
         <p>和平、正義及健全制度</p>
       </div>
       <div class="goal" onclick="showGoalInfo(17)">
-        <img src="" alt="Goal 17">
+        <img src="images/sdgs17.png" alt="Goal 17">
         <p> 多元夥伴關係</p>
       </div>
     </div>
