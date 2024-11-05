@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ProjectDetailsTableSeeder extends Seeder
 {
@@ -15,35 +16,61 @@ class ProjectDetailsTableSeeder extends Seeder
      */
     public function run()
     {
-        $project_details = [
-            ['id' => 1, 'date_listed' => '20210222', 'year' => 106, 'application_number' => '106-A-01-01-001', 'implementation_area' => '宜蘭縣', 'township' => '大同鄉', 'province_city_code' => 10002, 'province_city_town_code' => 10002110, 'project_name' => '大同鄉比雅楠部落基礎環境設施改善工程', 'central_grant' => 378, 'local_matching_funds' => 42, 'total_approved_budget_thousand' => 420, 'implementation_item' => '安全護欄改善(100m)', 'notes' => '宜蘭縣政府105年8月12日宜原經字第1050003934號函修正。'],
-            ['id' => 2, 'date_listed' => '20210326', 'year' => 106, 'application_number' => '106-A-03-04-001', 'implementation_area' => '桃園市', 'township' => '復興區', 'province_city_code' => 68000, 'province_city_town_code' => 68000130, 'project_name' => '霞雲坪部落環境改善工程', 'central_grant' => 800, 'local_matching_funds' => 200, 'total_approved_budget_thousand' => 1000, 'implementation_item' => '工區一：PC路面修復A=40㎡；工區二：1.PC路面修復A=500㎡。2.仿竹欄杆L=34m；3.新設排水溝L=130m；4.混凝土水溝蓋板2座；5.新設截水溝L=7m', 'notes' => '桃園市政府105年8月16日府原產字第1050201305號函修正。'],
-            ['id' => 3, 'date_listed' => '20210326', 'year' => 106, 'application_number' => '106-A-03-04-002', 'implementation_area' => '桃園市', 'township' => '復興區', 'province_city_code' => 68000, 'province_city_town_code' => 68000130, 'project_name' => '高義蘭部落排水設施改善工程', 'central_grant' => 2000, 'local_matching_funds' => 500, 'total_approved_budget_thousand' => 2500, 'implementation_item' => '工區一：集水井1座、暗溝L=140m；工區二：邊坡噴漿溝L=35m、消能井1座、過路暗溝L=10m；工區四：集水井(W=80cm、H=100cm、L=80cm)1座；工區五：水溝(W=70cm、H=70cm、L=150m)；工區六：HDPE(W=70cm、H=70cm、L=150cm)', 'notes' => '1.桃園市政府105年8月16日府原產字第1050201305號函修正。2.工區二矮牆工項、工區三及七刪除。'],
-            ['id' => 4, 'date_listed' => '20210326', 'year' => 106, 'application_number' => '106-A-03-04-006', 'implementation_area' => '桃園市', 'township' => '復興區', 'province_city_code' => 68000, 'province_city_town_code' => 68000130, 'project_name' => '義興部落道路及排水設施改善工程', 'central_grant' => 5280, 'local_matching_funds' => 1320, 'total_approved_budget_thousand' => 6600, 'implementation_item' => '1.AC路面改善：W=2.5m，L=692m。2.L溝：L=1375m', 'notes' => '桃園市政府105年8月16日府原產字第1050201305號函修正。'],
-            ['id' => 5, 'date_listed' => '20210326', 'year' => 106, 'application_number' => '106-A-03-04-007', 'implementation_area' => '桃園市', 'township' => '復興區', 'province_city_code' => 68000, 'province_city_town_code' => 68000130, 'project_name' => '樂信瓦旦紀念公園環境改善工程', 'central_grant' => 6800, 'local_matching_funds' => 1700, 'total_approved_budget_thousand' => 8500, 'implementation_item' => '1.工區一：新設擋土牆及欄杆、回填土、入口意象及停車空間改善、新設步道L=60m、新設座椅3座、新設排水溝L=50m、新設木作階梯。2.工區二：新設紅磚步道及排水溝1座、植栽綠美化L=45m、植栽綠美化。3.工區三：路面整理、新設步道L=75m、排水系統換格柵L=150m、遷移電線杆2支、電力1支及路燈1支。', 'notes' => '1.桃園市政府105年8月16日府原產字第1050201305號函修正。2.工區一「既有涼亭修繕」工項刪除。'],
-            ['id' => 6, 'date_listed' => '20210326', 'year' => 106, 'application_number' => '106-A-06-11-001', 'implementation_area' => '臺中市', 'township' => '和平區', 'province_city_code' => 66000, 'province_city_town_code' => 66000290, 'project_name' => '和平區南勢里第九鄰社區巷道環境改善工程', 'central_grant' => 800, 'local_matching_funds' => 200, 'total_approved_budget_thousand' => 1000, 'implementation_item' => '1.路口節點圖騰鋪面。2.道路瀝青鋪設601㎡。3.側邊壓花圖騰美化230㎡。', 'notes' => '1.臺中市政府105年7月22日府授：原經字第1050156131 號函修正。2.路口節點圖騰鋪面工項金額減列，請自行評估施作數量。'],
-            ['id' => 7, 'date_listed' => '20210326', 'year' => 106, 'application_number' => '106-A-07-13-001', 'implementation_area' => '南投縣', 'township' => '仁愛鄉', 'province_city_code' => 10008, 'province_city_town_code' => 10008130, 'project_name' => '106仁愛鄉中正村卡度部落基礎環境改善工程', 'central_grant' => 1980, 'local_matching_funds' => 220, 'total_approved_budget_thousand' => 2200, 'implementation_item' => '1.排水溝改善L=200m、W=0.8m、H=0.6m。2.AC道路改善工程L=400m、W=3m、A=1200㎡。', 'notes' => '南投縣政府105年6月8日府授原建字第1050120404號函提報，本計畫105年7月29日審核會議決議納列。'],
-            ['id' => 8, 'date_listed' => '20210326', 'year' => 106, 'application_number' => '106-A-07-13-004', 'implementation_area' => '南投縣', 'township' => '仁愛鄉', 'province_city_code' => 10008, 'province_city_town_code' => 10008130, 'project_name' => '106仁愛鄉萬豐部落基礎環境改善工程', 'central_grant' => 1080, 'local_matching_funds' => 120, 'total_approved_budget_thousand' => 1200, 'implementation_item' => '1.工區1：AC道路改善工程L=360m、W=3.5m、A=1260㎡。2.工區二：AC道路改善工程L=320m、W=3m、A=960㎡。', 'notes' => '南投縣政府105年8月3日府授原建字第1050162098號函修正。'],
-            ['id' => 9, 'date_listed' => '20210326', 'year' => 106, 'application_number' => '106-A-08-15-002', 'implementation_area' => '嘉義縣', 'township' => '阿里山鄉', 'province_city_code' => 10010, 'province_city_town_code' => 10010180, 'project_name' => '嘉義縣阿里山鄉樂野村基礎設施改善工程', 'central_grant' => 665, 'local_matching_funds' => 35, 'total_approved_budget_thousand' => 700, 'implementation_item' => '工區1：新設排水明溝40*60cm L=65m、路面PC鋪設厚15cm 250㎡。工區2 : 路面AC鋪設。', 'notes' => '1.嘉義縣政府105年8月10日府民原字第1050156607號函修正。2.工區2-2、2-4位於縣道嘉156部分路段刪除。']
-        ];
-
-        foreach ($project_details as $project_detail) {
+        $areas = ['宜蘭縣', '桃園市', '臺中市', '南投縣', '嘉義縣', '屏東縣', '臺東縣', '花蓮縣', '苗栗縣', '高雄市', '新竹縣'];
+        $townships = ['復興區', '仁愛鄉', '來義鄉', '春日鄉', '大武鄉', '池上鄉', '卑南鄉', '延平鄉', '長濱鄉', '玉里鎮', '光復鄉', '吉安鄉', '花蓮市', '富里鄉', '泰安鄉', '信義鄉', '茂林區', '泰武鄉', '海端鄉', '鹿野鄉', '達仁鄉', '新城鎮', '霧台鄉','臺東市', '瑞穗鄉', '萬榮鄉', '桃源區', '壽豐鄉', '鳳林鎮', '魚池鄉', '蘭嶼鄉', '豐濱鄉', '南庄鄉', '那瑪夏區', '牡丹鄉', '太麻里鄉', '成功鎮','五峰鄉', '卓溪鄉'];
+        $projects = ['大同鄉比雅楠部落基礎環境設施改善工程','霞雲坪部落環境改善工程','高義蘭部落排水設施改善工程','義興部落道路及排水設施改善工程','樂信瓦旦紀念公園環境改善工程','和平區南勢里第九鄰社區巷道環境改善工程','106仁愛鄉中正村卡度部落基礎環境改善工程','106仁愛鄉萬豐部落基礎環境改善工程','嘉義縣阿里山鄉樂野村基礎設施改善工程','106年青山村基礎設施改善工程','106來義鄉望嘉及大後部落擋土牆改善工程','106來義鄉新來義部落排水改善工程','106來義鄉丹林村及南和村聚會所修繕工程','106春日鄉歸崇、力里部落環境改善工程','南興及南安部落環境設施改善工程','大鳥村部落道路改善工程','池上鄉富興部落環境改善工程','卑南鄉東興村達魯瑪克部落周邊環境改善工程','永康部落環境改善工程','紅葉多功能活動廣場興建工程','東河鄉泰源村泰源部落基礎環境改善工程','膽曼部落基礎設施改善工程','八桑安部落環境設施改善工程','玉里鎮樂合里路面暨排水改善工程','玉里鎮長良里吉哈蓋部落入口意象工程','光復鄉大馬村香草社區道路改善工程','光復鄉大華村大華街107巷道路改善工程','光復鄉東富村建國路、富強街及富田三街36巷道路改善工程','光復鄉大興村大興部落道路改善工程','吉安鄉七腳川部落聚會所興建工程規劃設計','小臺東部落聚會所興建工程規劃設計','華東部落部落文化聚會所興建工程規劃案','吉拉米代部落基礎環境改善工程','泰安鄉梅園部落排水改善工程','信義鄉潭南村潭南部落基礎建設改善工程','茂林區茂林部落基礎環境改善計畫工程','106春日鄉古華部落環改善工程','萬安村部落道路改善工程','吾拉魯滋部落多功能文化聚會所興建工程規劃設計','利稻村村落道路改善工程','鹿野鄉瑞興部落周邊環境改善工程','鹿野鄉和平部落周邊環境改善工程','土?及台?部落巷道AC路面改善工程','台?村啦里吧消防桶左側路面、排水溝改善工程','臺東縣達仁鄉土?村往長照據點道路改善工程','泰安鄉象鼻村大安部落環境改善工程','泰安鄉士林村部落文化聚會所新建工程規劃設計','信義鄉望美村久美部落基礎建設改善工程','106年度丹路村聯絡道路擋土牆意象整修工程','長樂村大公路旁部落基礎設施改喜工程','小路部落文化聚會所興建計畫','新城鄉佳林部落道路改善工程','霧台大武部落道路及排水溝改善工程','禮納里好茶文化故事牆設施工程','石川部落入口帶狀空間環境改善工程','新城鄉北埔部落聚會所二期興建工程規劃設計','瑞穗鄉富興部落區域排水改善工程','瑞穗鄉富興部落聚會所及聯外道路改善工程','西林村第12鄰社區排水設施改善工程','106年度高雄市桃源區寶山里基礎環境改善工程','平和部落多功能活動廣場周邊環境綠美化工程','壽豐鄉溪口部落道路改善工程','鳳信部落基礎環境改善計畫工程','日月部落基礎環境改善工程-伊達邵部落路面改善工程','臺東縣蘭嶼鄉各村入口意象改善計畫','中興部落基礎環境改善計畫工程','豐濱鄉靜埔村1-8鄰部落基礎建設改善工程','107年馬兒部落基礎設施改善工程','107來義鄉文樂部落巷道路面排水改善工程','和平部落18鄰擋土牆改善工程','卑南鄉卑南村利嘉部落620及628巷排水溝改善工程','上里部落環境改善工程','嘉蘭村三角公園改善工程','慶豐部落聚會所興建工程','尖石鄉秀巒村田埔部落擋土牆改善工程','春日鄉力里部落員山路巷道排水與護欄改善工程','平和村部落道路改善工程','僅那鹿角部落基礎設施改善工程','三間屋部落環境設施改善工程','鹿野鄉和平文化聚會所整修工程','泰安鄉天狗部落5鄰及4鄰基礎環境改善工程','信義鄉同富部落道路排水溝基礎設施改善工程','獅子鄉楓林村(含新路社 區)道路設施及排水溝改善工程','內文部落集會所興建工程規劃設計','排灣部落地景改善工程','森永部落基礎環境改善工程','豐里部落周邊環境改善工程','建和部落基礎改善工程','萬榮鄉馬遠村9鄰擋土牆改善工程','桃源區往勤和避難屋道路護欄及路面改善工程','霧台國小旁道路及排水溝改善工程','南庄鄉南江村東江新?部落基礎環境改善工程(第二期)','南庄鄉瓦祿部落基礎環境改善工程','平靜部落基礎環境改善工程','仁愛鄉南豐村部落基礎環境改善工程','108年三地門鄉長治百合大愛園區德文集會所改善工程','來義鄉古樓、丹林及義林部落巷道路面改善工程','小臺東部落周邊基礎環境設施改善案','108春日鄉春日上部落祭儀廣場設置工程','108春日鄉力里村聚會所興建工程規劃設計','吉拉米代部落環境改善工程','松羅部落環境基礎設施改善工程','泰安鄉泰雅文物館周邊環境改善工程','108年度獅子鄉丹路一巷道路改善工程','108年度獅子鄉丹四巷道路改善工程','泰安鄉八卦村4鄰部落環境改善工程','北葉村第八鄰排水及邊坡改善工程','涼山村北側外環道路面改善工程','電光及德高部落排水設施改善工程','南庄鄉鹿場部落基礎環境改善工程','翠華村翠巒部落入口牌樓及真耶穌教會翠巒教會前基礎設施改善工程','米乎咪尚文化健康站多功能文化聚會所新建工程規劃設計','米乎咪尚文化健康站多功能文化聚會所新建工程規劃設計','三地門鄉青山部落巷道路面改善工程','109年三地門鄉德文部落德文巷基礎設施改善工程','109年度牡丹鄉旭海部落集會所改善工程','來義鄉大後部落文化聚會所興建工程規劃設計','美和村荒野部落擋土設施及安全護欄改善工程','重安部落社區巷道路面改善工程','池上鄉慶豐村、大坡村AC道路改善工程','武陵村水圳公園環境改善工程','松浦福音部落護坡工程','玉里鎮坪頂部落基礎設施改善工程','福音聚會所修繕工程','馬太林部落泰林原住民文化園區跳舞場修繕工程','光復鄉大馬村17、18鄰道路改善工程','南華部落聚會所新建工程','仁安多功能部落聚會所新建工程規劃設計','中平部落聚會所興建工程','109年度春日鄉士文部落集會所改善工程','海端鄉新武部落基礎環境改善工程','花蓮縣新城鄉芭拉米旦聚會所增設公廁及儲藏室工程規劃設計','花蓮縣新城鄉復興部落聚會所興建工程規劃設計案','庫志部落排水改善工程','109年度泰安鄉八卦2、4鄰部落基礎環境改善工程','阿里山鄉山美村部落基礎環境改善工程','阿里山鄉達邦村特富野部落基礎環境改善工程','馬遠村原住民聚會場新建工程','魚池鄉日月村伊達邵部落聚會所興建工程規劃設計','鳳林鎮復興路120巷AC路面改善工程','豐濱村基礎建設改善計畫','豐濱鄉16鄰(八里灣部落)基礎環境改善工程','南庄鄉鹿場部落基礎環境改善工程','明利多功能聚會場新建工程','拉署旦部落聚會所興建工程','玉城部落聚會所興建工程','109年三地門鄉德文部落德文巷基礎設施改善工程','南華部落聚會所新建工程','共和部落聚會所興建工程','香草場部落聚會場新建工程','馬佛部落聚會所新建工程','烏槓部落聚會所新建工程','大隘村8-9鄰部落基礎環境改善工程','南庄鄉八卦力部落周邊環境改善工程','花蓮縣花蓮市幾可普部落聚會所工程規劃設計','鳳林鎮鳳信部落聚會所規劃設計','森榮部落及長橋部落環境改善工程','福興(樂舞廣場)多功能部落聚會所規劃設計','博愛新村多功能部落聚會所規劃設計','豐山德落部落聚會所新建工程','壽豐鄉志學部落志昌街道路AC刨鋪工程','壽豐鄉水璉部落道路AC刨鋪工程','瑞穗鄉瑞美村娜魯灣部落環境設施改善工程','花蓮縣富里鄉吳江部落入口意象興建工程'];
+        
+        for ($i = 0; $i < 20; $i++) {
+            // 隨機生成日期
+            $dateListed = Carbon::now()->subDays(rand(1, 365))->format('Y-m-d');
+            
+            // 隨機生成年度
+            $year = rand(106, 110);
+        
+            // 隨機生成送審案件編號
+            $applicationNumber =  rand(10000, 900000);
+            
+            // 隨機生成實施區域（縣市）
+            $implementationArea = $areas[array_rand($areas)];
+        
+            // 隨機生成鄉鎮區
+            $township = $townships[array_rand($townships)];
+            
+            // 隨機生成省市代碼和省市鄉鎮代碼
+            $provinceCityCode = strtoupper( Str::random(3)) . rand(100, 999);
+            $provinceCityTownCode = strtoupper( Str::random(2)) . rand(100, 999);
+        
+            // 隨機生成工程名稱
+            $projectName = $projects[array_rand($projects)] . ' - ' . strtoupper( Str::random(3));
+        
+            // 隨機生成補助款金額
+            $centralGrant = rand(1000000, 10000000);
+            $localMatchingFunds = rand(100000, 5000000);
+            $totalApprovedBudget = $centralGrant + $localMatchingFunds;
+        
+            // 隨機生成施作項目描述
+            $implementationItem = '施作內容包括但不限於: ' . ucfirst( Str::random(15)) . '、' . ucfirst( Str::random(15));
+        
+            // 隨機生成備註
+            $notes = '備註: ' . ucfirst( Str::random(20));
+        
+            // 插入資料
             DB::table('project_details')->insert([
-                'date_listed' => $project_detail['date_listed'],
-                'year' => $project_detail['year'],
-                'application_number' => $project_detail['application_number'],
-                'implementation_area' => $project_detail['implementation_area'],
-                'township' => $project_detail['township'],
-                'province_city_code' => $project_detail['province_city_code'],
-                'province_city_town_code' => $project_detail['province_city_town_code'],
-                'project_name' => $project_detail['project_name'],
-                'central_grant' => $project_detail['central_grant'],
-                'local_matching_funds' => $project_detail['local_matching_funds'],
-                'total_approved_budget_thousand' => $project_detail['total_approved_budget_thousand'],
-                'implementation_item' => $project_detail['implementation_item'],
-                'notes' => $project_detail['notes'],
-                'created_at' => now(),
-                'updated_at' => now(),
+                'date_listed' => $dateListed,
+                'year' => $year,
+                'application_number' => $applicationNumber,
+                'implementation_area' => $implementationArea,
+                'township' => $township,
+                'province_city_code' => $provinceCityCode,
+                'province_city_town_code' => $provinceCityTownCode,
+                'project_name' => $projectName,
+                'central_grant' => $centralGrant,
+                'local_matching_funds' => $localMatchingFunds,
+                'total_approved_budget_thousand' => $totalApprovedBudget / 1000,  // 計算以千元為單位
+                'implementation_item' => $implementationItem,
+                'notes' => $notes,
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now()
             ]);
         }
     }
