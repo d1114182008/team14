@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DetailsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/sdgs', function () {
-    return view('intro_sdgs');
-});
+Route::get('Details.index', [DetailsController::class, 'index'] );
