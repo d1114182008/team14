@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\projectdetailsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,13 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 
+Route::get('projectdetails.index',[projectdetailsController::class,'index']);
 
-Route::get('/sdgs'
-, function () {
-    return view('intro_sdgs');
-});
