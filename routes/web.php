@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DetailsController;
+use App\Models\Details;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +20,8 @@ Route::get('/', function () {
 });
 
 Route::get('Details.index', [DetailsController::class, 'index'] );
+
+Route::get('/Details.index2', function () {
+    $Details = Details::all();
+    return view('Details.index2', compact('Details'));
+});
