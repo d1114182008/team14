@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers;
-use App\Models\projectdetails;
+use App\Models\ProjectDetails;  // 注意大小写
 
 class projectdetailsController extends Controller
 {
@@ -15,7 +14,7 @@ class projectdetailsController extends Controller
      */
     public function index()
     {
-        //
+        
         $projectdetails = projectdetails::all();
         return view('projectdetails.index', compact('projectdetails'));
     }
@@ -49,7 +48,8 @@ class projectdetailsController extends Controller
      */
     public function show($id)
     {
-        //
+        $projectdetails = ProjectDetails::findOrFail($id);  // 修正这里的 findOrFail 调用
+        return view('projectdetails.show')->with('projectdetails', $projectdetails);  // 修正这里的 with 调用
     }
 
     /**
@@ -83,6 +83,9 @@ class projectdetailsController extends Controller
      */
     public function destroy($id)
     {
-        //
+    $projectdetail = ProjectDetails::find($id);
+    $projectdetail->delete();
+    return redirect('projectdetails/indexnew');
+
     }
 }
