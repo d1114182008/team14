@@ -50,7 +50,8 @@ class DetailsController extends Controller
      */
     public function show($id)
     {
-        //
+        $Details =Details ::findOrFail($id);
+        return view('Details.show', ['Details' => $Details]);
     }
 
     /**
@@ -85,5 +86,8 @@ class DetailsController extends Controller
     public function destroy($id)
     {
         //
+        $Details =Details ::findOrFail($id);
+        $Details->delete();
+        return redirect('Details.index2');
     }
 }

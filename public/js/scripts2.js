@@ -62,3 +62,6 @@ function searchTable() {
       suggestionDiv.innerHTML = '';
     }
   }
+ function goBack() {
+    window.history.back();
+ }

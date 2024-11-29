@@ -25,3 +25,10 @@ Route::get('/Details.index2', function () {
     $Details = Details::all();
     return view('Details.index2', compact('Details'));
 });
+
+ // 顯示
+ Route::get('Details/{id}', [DetailsController::class, 'show'])->where('id', '[0-9]+')->name('Details.show');
+ // 修改
+ Route::get('Details/{id}/edit', [DetailsController::class, 'edit'])->where('id', '[0-9]+')->name('Details.edit');
+ //刪除
+ Route::delete('Details/delete/{id}', [DetailsController::class, 'destroy'])->where('id', '[0-9]+')->name('Details.destroy');
