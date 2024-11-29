@@ -1,5 +1,8 @@
 @extends('app')
 
+@push('styles')
+    <link rel="stylesheet" href="{{ asset('css/showstyles.css') }}">
+@endpush
 @section('content')
     <div class="container">
         <h1 class="title">詳細資料</h1>
@@ -23,56 +26,4 @@
         <button class="button" type="button" onclick="goBack()">返回上一頁</button>
     </div>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #121212;
-            color: #e0e0e0;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #1e1e1e;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            
-        }
-
-        .title {
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .details p {
-            font-size: 1.1rem;
-            margin: 10px 0;
-            line-height: 1.6;
-            
-        }
-
-        .details strong {
-            color: #76c7c0;
-        }
-
-        .back-button {
-            background-color: #333;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-
-        .back-button:hover {
-            background-color: #555;
-        }
-    </style>
 @endsection

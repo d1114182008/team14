@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>原住民族部落永續發展造景計畫核定明細</title>
 
-    <link rel="stylesheet" href="{{ asset('css/styles2.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/styles2.css') }}">     
     @stack('styles') 
 </head>
 <body>
