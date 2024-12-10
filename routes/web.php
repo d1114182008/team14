@@ -32,3 +32,7 @@ Route::get('/Details.index2', function () {
  Route::get('Details/{id}/edit', [DetailsController::class, 'edit'])->where('id', '[0-9]+')->name('Details.edit');
  //刪除
  Route::delete('Details/delete/{id}', [DetailsController::class, 'destroy'])->where('id', '[0-9]+')->name('Details.destroy');
+ //新增資料
+ Route::get('Details/create', [DetailsController::class, 'create'])->name('Details.create');
+//儲存一筆資料
+Route::post('Details/store',[DetailsController::class, 'store'])->name('Details.store');

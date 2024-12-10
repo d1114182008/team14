@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers;
 use App\Models\Details;
+use GuzzleHttp\Promise\Create;
 
 class DetailsController extends Controller
 {
@@ -28,7 +29,8 @@ class DetailsController extends Controller
      */
     public function create()
     {
-        //
+        $taps = Details::all(); 
+        return view('Details.create', ['Details' => $taps, 'DetailSelected' => null]);
     }
 
     /**
@@ -40,6 +42,25 @@ class DetailsController extends Controller
     public function store(Request $request)
     {
         //
+        $date = $request->only([
+            'date_listed',
+            'year',
+            'application_number',
+            'implementation_area',
+            'township',
+            'province_city_code',
+            'province_city_town_code',
+            'project_name',
+            'central_grant',
+            'local_matching_funds',
+            'total_approved_budget_thousand',
+            'implementation_item',
+            'notes',
+        ]);
+        
+        $Details = Details::create($date);
+        
+        return redirect('Details.index2');
     }
 
     /**

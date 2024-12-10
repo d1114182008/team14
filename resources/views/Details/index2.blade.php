@@ -10,7 +10,7 @@
 
     <div class="search-suggestion" id="suggestion"></div>
     <div class="no-results" id="noResults" style="display:none;">無搜尋結果</div>
-
+    <a href={{ route('Details.create')}}>新增</a>
     <table id="dataTable">
         <thead>
             <tr>
