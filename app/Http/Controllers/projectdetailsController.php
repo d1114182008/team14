@@ -26,7 +26,9 @@ class projectdetailsController extends Controller
      */
     public function create()
     {
-        //
+        $taps =  projectdetails::all(); 
+        return view(' projectdetails.create', [' projectdetails' => $taps, ' projectdetailsSelected' => null]);
+
     }
 
     /**
@@ -38,6 +40,25 @@ class projectdetailsController extends Controller
     public function store(Request $request)
     {
         //
+        $date = $request->only([
+            'date_listed',
+            'year',
+            'application_number',
+            'implementation_area',
+            'township',
+            'province_city_code',
+            'province_city_town_code',
+            'project_name',
+            'central_grant',
+            'local_matching_funds',
+            'total_approved_budget_thousand',
+            'implementation_item',
+            'notes',
+        ]);
+        
+        $Details = ProjectDetails::create($date);
+        
+        return redirect('projectdetails/indexnew');
     }
 
     /**

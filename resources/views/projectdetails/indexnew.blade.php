@@ -3,7 +3,14 @@
 @section('title', '原住民族部落永續發展造景計畫核定明細')
 
 @section('content')
-  <table>
+<!-- Form with flexbox to center the button -->
+<form action="{{ route('projectdetails.create') }}" method="get" style="display: flex; justify-content: center; width: 100%;">
+  <button type="submit" class="btn-like">
+      新增原住民族部落永續發展造景計畫核定明細
+  </button>
+</form>
+
+<table>
     <thead>
       <tr>
         <th>日期</th>
@@ -55,5 +62,5 @@
         </tr>
       @endforeach
     </tbody>
-  </table>
+</table>
 @endsection

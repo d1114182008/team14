@@ -13,7 +13,9 @@ use App\Http\Controllers\ProjectDetailsController;
 | which contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('projectdetails/store',[ProjectDetailsController::class, 'store'])->name('projectdetails.store');
 
+Route::get('projectdetails/create', [ProjectDetailsController::class, 'create'])->name('projectdetails.create');
 // 路由1: 显示所有项目详情的页面
 Route::get('projectdetails', [ProjectDetailsController::class, 'index'])->name('projectdetails.index');
 
