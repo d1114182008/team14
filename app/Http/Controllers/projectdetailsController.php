@@ -79,11 +79,10 @@ class projectdetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
-    }
-
+    public function edit($id) {
+        $projectdetails = projectdetails::find($id);
+        return view("projectdetails.edit")->with('projectdetails', $projectdetails);
+    }    
     /**
      * Update the specified resource in storage.
      *
@@ -93,7 +92,27 @@ class projectdetailsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $projectdetails = projectdetails::findOrFail($id);
+                $data = $request->only([
+                    'date_listed',
+                    'year',
+                    'application_number',
+                    'implementation_area',
+                    'township',
+                    'province_city_code',
+                    'province_city_town_code',
+                    'project_name',
+                    'central_grant',
+                    'local_matching_funds',
+                    'total_approved_budget_thousand',
+                    'implementation_item',
+                    'notes',
+                ]);
+                $projectdetails->fill($data);
+                
+                $projectdetails->save();
+                
+                return redirect('projectdetails/indexnew');
     }
 
     /**

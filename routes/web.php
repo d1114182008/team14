@@ -31,3 +31,6 @@ Route::get('projectdetails/{id}', [ProjectDetailsController::class, 'show'])
     ->name('projectdetails.show');  // 给这个路由命名
 
     Route::delete('projectdetails/{id}', [ProjectDetailsController::class, 'destroy'])->name('projectdetails.destroy');
+
+    Route::get('projectdetails/{id}/edit', [ProjectDetailsController::class, 'edit'])->where('id', '[0-9]+')->name('projectdetails.edit');
+    Route::patch('/projectdetails/{id}', [ProjectDetailsController::class, 'update'])->name('projectdetails.update');

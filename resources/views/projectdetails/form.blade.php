@@ -50,6 +50,3 @@
     {!! Form::label('notes', '備註:') !!}
     {!! Form::text('notes', null, ['class' => 'form-control']) !!}
 </div>
-<div class="form-group">
-    {!! Form::submit('新增資料',['class'=> 'btn btn-primary from-contriol']) !!}
-</div>

@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Form with flexbox to center the button -->
-<form action="{{ route('projectdetails.create') }}" method="get" style="display: flex; justify-content: center; width: 100%;">
+<form action="{{ route('projectdetails.create') }}" method="get" style="display: flex; justify-content: center; width: 26.5%;">
   <button type="submit" class="btn-like">
       新增原住民族部落永續發展造景計畫核定明細
   </button>
@@ -28,6 +28,7 @@
         <th>備註</th>
         <th>操作1</th>
         <th>操作2</th>
+        <th>操作3</th>
       </tr>
     </thead>
     <tbody>
@@ -51,6 +52,7 @@
             <!-- "顯示"按钮 -->
             <a href="{{ route('projectdetails.show', ['id' => $projectdetail->id]) }}">顯示</a>
           </td>
+          <td><a href="{{route('projectdetails.edit', ['id' =>$projectdetail->id])}}">修改</a></td>
           <td>
             <!-- 删除按钮：提交删除表单 -->
             <form action="{{ route('projectdetails.destroy', ['id' => $projectdetail->id]) }}" method="POST" onsubmit="return confirm('確定要刪除這個項目嗎？');">
