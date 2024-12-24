@@ -83,7 +83,8 @@ class DetailsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Details =Details ::findOrFail($id);
+        return view("Details.edit")->with('Details', $Details);
     }
 
     /**
@@ -95,7 +96,28 @@ class DetailsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $Details = Details::findOrFail($id);
+        $data = $request->only([
+            'date_listed',
+            'year',
+            'application_number',
+            'implementation_area',
+            'township',
+            'province_city_code',
+            'province_city_town_code',
+            'project_name',
+            'central_grant',
+            'local_matching_funds',
+            'total_approved_budget_thousand',
+            'implementation_item',
+            'notes',
+        ]);
+
+        $Details->fill($data);
+        
+        $Details->save();
+        
+        return redirect('Details.index2');
     }
 
     /**

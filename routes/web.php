@@ -30,6 +30,7 @@ Route::get('/Details.index2', function () {
  Route::get('Details/{id}', [DetailsController::class, 'show'])->where('id', '[0-9]+')->name('Details.show');
  // 修改
  Route::get('Details/{id}/edit', [DetailsController::class, 'edit'])->where('id', '[0-9]+')->name('Details.edit');
+ Route::patch('Details/update/{id}', [DetailsController::class, 'update'])->where('id', '[0-9]+')->name('Details.update');
  //刪除
  Route::delete('Details/delete/{id}', [DetailsController::class, 'destroy'])->where('id', '[0-9]+')->name('Details.destroy');
  //新增資料
