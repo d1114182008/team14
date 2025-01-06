@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+//use Illuminate\Http\Request;
+use App\Http\Requests\Detailsrequest;
 use App\Http\Controllers;
 use App\Models\Details;
 use GuzzleHttp\Promise\Create;
@@ -39,7 +40,7 @@ class DetailsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(\App\Http\Requests\Detailsrequest $request)
     {
         //
         $date = $request->only([
@@ -94,7 +95,7 @@ class DetailsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(\App\Http\Requests\Detailsrequest $request, $id)
     {
         $Details = Details::findOrFail($id);
         $data = $request->only([

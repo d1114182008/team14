@@ -8,6 +8,7 @@
 
 <div class="form-container">
     <h1 class="title">新增資料</h1>
+    @include('messages.list')
     {!! Form::open(['url' => 'Details/store']) !!}
         @include('Details.form', ['submitButtonText' => '新增資料'])
     <div class="form-group">
