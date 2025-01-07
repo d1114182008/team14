@@ -24,7 +24,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('province_city_town_code', '縣市鄉鎮代碼:') !!}
-    {!! Form::text('province_city_town_code', null, ['class' => 'form-control', 'required' => 'required', 'maxlength' => '20']) !!}
+    {!! Form::text('province_city_town_code', null, ['class' => 'form-control', 'required' => 'required', 'maxlength' => '30']) !!}
 </div>
 <div class="form-group">
     {!! Form::label('project_name', '計畫名稱:') !!}
