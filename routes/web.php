@@ -37,3 +37,7 @@ Route::get('/Details.index2', function () {
  Route::get('Details/create', [DetailsController::class, 'create'])->name('Details.create');
  //儲存一筆資料
  Route::post('Details/store',[DetailsController::class, 'store'])->name('Details.store');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
