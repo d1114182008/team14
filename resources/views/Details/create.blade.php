@@ -9,7 +9,6 @@
 <div class="form-container">
     <h1 class="title">新增資料</h1>
 
-    {{-- 顯示錯誤訊息 --}}
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
@@ -20,7 +19,6 @@
         </div>
     @endif
 
-    {{-- 表單開始 --}}
     {!! Form::open(['url' => 'Details/store']) !!}
 
         <div class="form-group">
@@ -127,19 +125,16 @@
             @endif
         </div>
 
-        {{-- 提交按鈕 --}}
         <div class="form-group">
             {!! Form::submit('新增資料', ['class' => 'btn btn-primary form-control']) !!}
         </div>
 
     {!! Form::close() !!}
 
-    {{-- 返回上一頁按鈕 --}}
     <br>
     <button class="button" type="button" onclick="goBack()">返回上一頁</button>
 </div>
 
-{{-- JavaScript 返回上一頁函數 --}}
 <script>
     function goBack() {
         window.history.back();
