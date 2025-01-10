@@ -17,25 +17,25 @@ class DatabaseSeeder extends Seeder
     {
         $user = new User();
         $user->password = Hash::make('123456789');
-        $user->email = 'D1114182008@admin.com';
+        $user->email = 'admin@D1114182008.com';
         $user->name = 'Admin';
         $user->role = User::ROLE_ADMIN; 
         $user->save();
 
         $user = new User();
         $user->password = Hash::make('123456789');
-        $user->email = 'D1114182008@manager.com';
+        $user->email = 'manager@D1114182008.com';
         $user->role = User::ROLE_MANAGER; 
         $user->name = 'Manager';
         $user->save();
 
         $user = new User();
         $user->password = Hash::make('123456789');
-        $user->email = 'D1114182008@user.com';
+        $user->email = 'user@D1114182008.com';
         $user->role = User::ROLE_USER; 
         $user->name = 'User';
         $user->save();
-        
+
         $this->call(ProjectDetailsTableSeeder::class);
     }
 }
