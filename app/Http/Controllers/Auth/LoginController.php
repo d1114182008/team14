@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
@@ -26,15 +27,23 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/Details.index2';
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
+     * 
+     * @param 
+     * @return 
      */
-    public function __construct()
+
+    public function logout(Request $request)
     {
-        $this->middleware('guest')->except('logout');
+        $this->guard()->logout(); 
+ 
+        $request->session()->invalidate(); 
+ 
+        $request->session()->regenerateToken();  
+ 
+        return redirect()->route('Details.index2'); 
     }
 }

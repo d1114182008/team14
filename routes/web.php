@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\DetailsController;
 use App\Models\Details;
 
@@ -24,7 +25,7 @@ Route::get('Details.index', [DetailsController::class, 'index'] );
 Route::get('/Details.index2', function () {
     $Details = Details::all();
     return view('Details.index2', compact('Details'));
-});
+})->name('Details.index2');
 
  // 顯示
  Route::get('Details/{id}', [DetailsController::class, 'show'])->where('id', '[0-9]+')->name('Details.show');
@@ -38,6 +39,6 @@ Route::get('/Details.index2', function () {
  //儲存一筆資料
  Route::post('Details/store',[DetailsController::class, 'store'])->name('Details.store');
 
-Auth::routes();
+ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ Auth::routes();

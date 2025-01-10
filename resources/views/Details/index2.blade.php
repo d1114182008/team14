@@ -39,8 +39,12 @@
                 <th>實施項目</th>
                 <th>備註</th>
                 <th>操作1</th>
+                @can('admin')
                 <th>操作2</th>
                 <th>操作3</th>
+                @elsecan('manager')
+                <th>操作2</th>
+                @endcan
             </tr>
         </thead>
         <tbody>
@@ -60,6 +64,7 @@
                     <td>{{$Detail->implementation_item}}</td>
                     <td>{{$Detail->notes}}</td>
                     <td><a href="{{route('Details.show', ['id' =>$Detail->id])}}">顯示</a></td>
+                    @can('admin')
                     <td><a href="{{route('Details.edit', ['id' =>$Detail->id])}}">修改</a></td>
                     <td>
                     <form action="{{ url('/Details/delete', ['id' => $Detail->id]) }}" method="post">
@@ -68,6 +73,9 @@
                         @csrf
                     </form>
                 </td>
+                @elsecan('manager')
+                <td><a href="{{route('Details.edit', ['id' =>$Detail->id])}}">修改</a></td>
+                @endcan
                 </tr>
             @endforeach
         </tbody>
