@@ -34,3 +34,6 @@ Route::get('projectdetails/{id}', [ProjectDetailsController::class, 'show'])
 
     Route::get('projectdetails/{id}/edit', [ProjectDetailsController::class, 'edit'])->where('id', '[0-9]+')->name('projectdetails.edit');
     Route::patch('/projectdetails/{id}', [ProjectDetailsController::class, 'update'])->name('projectdetails.update');
+    Route::get('/intro_sdgs', function () {
+        return view('intro_sdgs');  // 顯示 sustainable-goals.blade.php
+    });
