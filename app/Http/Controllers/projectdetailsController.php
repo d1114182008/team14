@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\CreateindexRequest; 
 use App\Models\ProjectDetails;  // 注意大小写
 
 class projectdetailsController extends Controller
@@ -37,7 +37,7 @@ class projectdetailsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateindexRequest $request)
     {
         //
         $date = $request->only([
